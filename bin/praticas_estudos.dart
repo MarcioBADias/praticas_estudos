@@ -1,5 +1,17 @@
-import 'package:praticas_estudos/praticas_estudos.dart' as praticas_estudos;
+import "dart:math";
 
-void main(List<String> arguments) {
-  print('Hello world: ${praticas_estudos.calculate()}!');
+void main() {
+  var random = Random();
+
+  for (int i = 0, j = 10; i < 10 && j < 100; i++, j = j + i * 10) {
+    print("i = $i");
+    print("j = $j");
+
+    if (j > 30) {
+      print("Break dentro do for");
+      break;
+    }
+
+    print("Depois do Break");
+  }
 }
