@@ -2,25 +2,24 @@ import "dart:math";
 
 void main() {
   var random = Random();
-  List<int> numbers = [];
+  List mixedList = [];
 
-  for (int i = 0; i < 20; i++) {
-    int randomNumber = random.nextInt(99);
-    numbers.add(randomNumber);
+  for (int i = 0; i < 10; i++) {
+    mixedList.add("string");
+    mixedList.add(i);
   }
 
-  int elementList = -1;
-  int count = 0;
+  for (int i = 0; i < mixedList.length; i++) {
+    var insideTheList = mixedList[i];
 
-  do {
-    print("A lista constam ${numbers.length} numeros que são : $numbers");
-
-    if (count >= numbers.length) {
-      print("contador chegou ao fim com $count contagens");
-      break;
+    if (insideTheList is String) {
+      print("Temos uma String na posição $i");
     }
 
-    elementList = numbers[count];
-    count++;
-  } while (count < 0);
+    if (insideTheList is int) {
+      print("Temos um Int $insideTheList");
+    }
+  }
+
+  print("Lista mista: $mixedList");
 }
