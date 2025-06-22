@@ -1,7 +1,20 @@
 import "dart:math";
 
-void main() {
+String generateString(int length) {
   var random = Random();
+  var stringToGenerate = "";
+  List alphaList = ["a", "b", "c", "d", "e"];
+  for (int i = 0; i < length; i++) {
+    int randomNumber = random.nextInt(20);
+    int alphaListIndex = randomNumber % alphaList.length;
+    var insideAlphaList = alphaList[alphaListIndex];
+    stringToGenerate += insideAlphaList;
+  }
+
+  return stringToGenerate;
+}
+
+void main() {
   List mixedList = [];
 
   for (int i = 0; i < 10; i++) {
@@ -9,17 +22,11 @@ void main() {
     mixedList.add(i);
   }
 
-  for (int i = 0; i < mixedList.length; i++) {
-    var insideTheList = mixedList[i];
+  var randomString01 = generateString(8);
+  var randomString02 = generateString(8);
+  var randomString03 = generateString(8);
 
-    if (insideTheList is String) {
-      print("Temos uma String na posição $i");
-    }
-
-    if (insideTheList is int) {
-      print("Temos um Int $insideTheList");
-    }
-  }
-
-  print("Lista mista: $mixedList");
+  print(
+    "As tres novas senhas são $randomString01 (Senha 01), $randomString02 (Senha02) e $randomString03 (Senha 03)",
+  );
 }
