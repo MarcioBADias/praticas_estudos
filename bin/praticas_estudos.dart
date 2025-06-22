@@ -7,6 +7,11 @@ void main() {
     print("i = $i");
     print("j = $j");
 
+    if (j > 20) {
+      print("Continue dentro do for");
+      continue;
+    }
+
     if (j > 30) {
       print("Break dentro do for");
       break;
