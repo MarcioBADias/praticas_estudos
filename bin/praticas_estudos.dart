@@ -14,6 +14,11 @@ String generateString(int length) {
   return stringToGenerate;
 }
 
+String generateFullNameAndAge(String fistName, String secondName, int age) {
+  var fullNameAndAge = "Me chamo $fistName $secondName e tenho $age anos";
+  return fullNameAndAge;
+}
+
 void main() {
   List mixedList = [];
 
@@ -25,7 +30,9 @@ void main() {
   var randomString01 = generateString(8);
   var randomString02 = generateString(8);
   var randomString03 = generateString(8);
+  var generateFullName = generateFullNameAndAge("Marcio", "Dias", 36);
 
+  print(generateFullName);
   print(
     "As tres novas senhas são $randomString01 (Senha 01), $randomString02 (Senha02) e $randomString03 (Senha 03)",
   );
