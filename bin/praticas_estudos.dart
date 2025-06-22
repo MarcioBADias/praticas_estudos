@@ -2,21 +2,11 @@ import "dart:math";
 
 void main() {
   var random = Random();
+  List<int> numbers = [];
 
-  for (int i = 0, j = 10; i < 10 && j < 100; i++, j = j + i * 10) {
-    print("i = $i");
-    print("j = $j");
-
-    if (j > 30) {
-      print("Break dentro do for");
-      break;
-    }
-
-    if (j > 20) {
-      print("Continue dentro do for");
-      continue;
-    }
-
-    print("Depois do Break");
+  for (int i = 0; i < 20; i++) {
+    int randomNumber = random.nextInt(99);
+    numbers.add(randomNumber);
   }
+  print("A lista constam ${numbers.length} numeros que são : $numbers");
 }
